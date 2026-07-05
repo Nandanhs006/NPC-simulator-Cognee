@@ -440,7 +440,7 @@ Even so, the current prototype demonstrates how Cognee can fundamentally change 
 
 # Built With
 
-- Cognee ❤️
+- Cognee 
 - FastAPI
 - Next.js
 - React
@@ -450,6 +450,18 @@ Even so, the current prototype demonstrates how Cognee can fundamentally change 
 - D3.js
 
 ---
+
+# Hackathon Experience
+
+Silver Creeks was built as a solo project during the Cognee Hackathon 2026.
+
+My goal wasn't just to build another chatbot—it was to explore what happens when NPCs stop forgetting. Most of my time was spent understanding Cognee's memory lifecycle and designing a system where memories could be stored, retrieved, shared, consolidated, and visualized in a way that felt meaningful for gameplay.
+
+The biggest challenge wasn't generating AI responses—it was managing persistent memory. I spent a significant amount of time reducing duplicate memories, making the knowledge graph readable, separating private NPC memories from shared town memories, and ensuring recalled context actually influenced future conversations.
+
+While I couldn't implement every feature I envisioned, the hackathon pushed me to build a complete end-to-end system that combines persistent AI memory, graph visualization, reputation mechanics, and evolving NPC interactions. It also gave me hands-on experience integrating Cognee's `remember()`, `recall()`, `improve()`, and `forget()` lifecycle into a practical application.
+
+This project is a prototype, but it demonstrates how persistent memory can make AI-driven game worlds feel significantly more alive and believable.
 
 # Acknowledgements
 
