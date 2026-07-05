@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <style>
+    .box { fill:#f7fafc; stroke:#2b6cb0; stroke-width:2; rx:8; }
+    .title { font: bold 18px sans-serif; fill:#2b6cb0; }
+    .text { font: 14px sans-serif; fill:#1a202c; }
+    .arrow { stroke:#2d3748; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d3748" />
+    </marker>
+  </defs>
+  <!-- Backend -->
+  <rect x="40" y="60" width="260" height="120" class="box" />
+  <text x="170" y="90" text-anchor="middle" class="title">Backend</text>
+  <text x="170" y="115" text-anchor="middle" class="text">Python FastAPI / Services</text>
+
+  <!-- Models -->
+  <rect x="40" y="220" width="260" height="120" class="box" />
+  <text x="170" y="250" text-anchor="middle" class="title">Models</text>
+  <text x="170" y="275" text-anchor="middle" class="text">Graph, Memory, NPC, World</text>
+
+  <!-- Frontend -->
+  <rect x="880" y="140" width="260" height="120" class="box" />
+  <text x="1010" y="170" text-anchor="middle" class="title">Frontend</text>
+  <text x="1010" y="195" text-anchor="middle" class="text">Next.js app + UI</text>
+
+  <!-- Services -->
+  <rect x="360" y="60" width="460" height="120" class="box" />
+  <text x="590" y="90" text-anchor="middle" class="title">Services Layer</text>
+  <text x="590" y="115" text-anchor="middle" class="text">AI, Graph, Memory, Reputation, Propagation</text>
+
+  <!-- State / Storage -->
+  <rect x="360" y="220" width="200" height="120" class="box" />
+  <text x="460" y="250" text-anchor="middle" class="title">State</text>
+  <text x="460" y="275" text-anchor="middle" class="text">state/state.json, seeded.txt</text>
+
+  <!-- Arrows -->
+  <path d="M300 120 L360 120" class="arrow" />
+  <path d="M820 120 L880 120" class="arrow" />
+  <path d="M620 180 L620 220" class="arrow" />
+  <path d="M460 340 L460 340" class="arrow" />
+
+  <!-- Labels -->
+  <text x="420" y="105" class="text">API calls / RPC</text>
+  <text x="750" y="105" class="text">UI requests</text>
+
+  <!-- Notes -->
+  <text x="40" y="380" class="text">High-level architecture: Frontend ↔ Services ↔ Backend models & state</text>
+</svg>
