@@ -55,23 +55,69 @@ Every conversation permanently changes the world.
 
 ---
 
-# Demo
-
-> *(Insert demo GIF here)*
-
----
-
 # Screenshots
 
-| Chat | Knowledge Graph |
-|------|-----------------|
-| ![](ss/chat.png) | ![](ss/graph.png) |
+## 💬 NPC Conversations
 
-| Brain Inspector | Town Memory |
-|-----------------|-------------|
-| ![](ss/brain.png) | ![](ss/town-memory.png) |
+Natural conversations where every NPC recalls previous interactions before responding.
+
+![Chat UI](./ss/Screenshot%202026-07-05%20215437.png)
 
 ---
+
+## 🕸️ Dynamic Knowledge Graph
+
+Every remembered interaction contributes to a live knowledge graph showing relationships between NPCs, locations, rumors, and events.
+
+![Knowledge Graph](./ss/Screenshot%202026-07-05%20231601.png)
+
+---
+
+## 🧠 NPC Brain Inspector
+
+Inspect exactly what memories were retrieved from Cognee before an NPC generated its response, making the system transparent instead of a black box.
+
+![Brain Inspector](./ss/Screenshot%202026-07-06%20001412.png)
+
+---
+
+## 👥 Persistent Conversations
+
+NPCs remember previous interactions, allowing conversations to evolve naturally instead of resetting every session.
+
+![Conversation](./ss/Screenshot%202026-07-06%20001635.png)
+
+---
+
+## 🔗 Relationship & Memory Graph
+
+The graph continuously evolves as players interact with the town, revealing how information propagates between characters.
+
+![Relationship Graph](./ss/Screenshot%202026-07-06%20001643.png)
+
+---
+
+## 📜 Town Memory Timeline
+
+View the complete timeline of important events remembered by the town, including conversations, rumors, investigations, and player actions.
+
+![Town Timeline](./ss/Screenshot%202026-07-06%20001646.png)
+
+---
+
+## ⚡ Memory Consolidation
+
+Demonstrates Cognee's `improve()` lifecycle operation by consolidating and enriching important memories for better future retrieval.
+
+![Memory Consolidation](./ss/Screenshot%202026-07-06%20002558.png)
+
+---
+
+## 🗑️ Town Amnesia
+
+Demonstrates Cognee's `forget()` operation by selectively clearing persistent memories while leaving the application itself intact.
+
+![Town Amnesia](./ss/Screenshot%202026-07-06%20002608.png)
 
 # How Cognee Powers Everything
 
