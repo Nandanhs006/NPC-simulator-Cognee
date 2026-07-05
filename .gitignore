@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+
+# Environment Variables
+
+.env
+.env.*
+!.env.example
+
+
+# Cognee / Databases
+
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Cognee generated files
+.cognee/
+
+# Backend State
+
+backend/state/*.bak
+backend/state/*.tmp
+
+backend/state/state.json
+
+# Node / Next.js
+
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+
+
+# TypeScript
+
+*.tsbuildinfo
+next-env.d.ts
+
+
+# Logs
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE
+
+.vscode/
+.idea/
+
+
+# OS
+
+.DS_Store
+Thumbs.db
+
+# Deployment
+
+.vercel/
+
+backend/.env
+.env

@@ -1,0 +1,1 @@
+[Metadata] Source: Witness | Category: Relationship | Importance: Critical | Confidence: 100 | Timestamp: Day 0 [Memory] Lalo and Nacho are partners. Lalo is charismatic and Nacho is a thief. Actions of one affect the reputation of both.

@@ -1,0 +1,64 @@
+{
+    "reputation": 0,
+    "day": 2,
+    "timeline": [
+        {
+            "day": 1,
+            "description": "Lalo spoke to Bartender Buck (Action: TALK)."
+        },
+        {
+            "day": 2,
+            "description": "Lalo spoke to Sheriff Jeremiah Ashcroft (Action: TALK)."
+        }
+    ],
+    "npcs": {
+        "sheriff": {
+            "trust_lalo": 0,
+            "trust_nacho": 0,
+            "opinion_lalo": "Stranger",
+            "opinion_nacho": "Stranger",
+            "name": "Sheriff Jeremiah Ashcroft",
+            "role": "Sheriff"
+        },
+        "banker": {
+            "trust_lalo": 0,
+            "trust_nacho": 0,
+            "opinion_lalo": "Stranger",
+            "opinion_nacho": "Stranger",
+            "name": "Banker Victor Sterling",
+            "role": "Banker"
+        },
+        "doctor": {
+            "trust_lalo": 0,
+            "trust_nacho": 0,
+            "opinion_lalo": "Stranger",
+            "opinion_nacho": "Stranger",
+            "name": "Doctor Isaac Vance",
+            "role": "Doctor"
+        },
+        "general_store": {
+            "trust_lalo": 0,
+            "trust_nacho": 0,
+            "opinion_lalo": "Stranger",
+            "opinion_nacho": "Stranger",
+            "name": "General Store Ruth Hayes",
+            "role": "General Store"
+        },
+        "ranch": {
+            "trust_lalo": 0,
+            "trust_nacho": 0,
+            "opinion_lalo": "Stranger",
+            "opinion_nacho": "Stranger",
+            "name": "Ranch Owner Wade Granger",
+            "role": "Ranch Owner"
+        },
+        "bartender": {
+            "trust_lalo": 5,
+            "trust_nacho": 1,
+            "opinion_lalo": "Stranger",
+            "opinion_nacho": "Stranger",
+            "name": "Bartender Buck",
+            "role": "Bartender"
+        }
+    }
+}
