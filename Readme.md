@@ -1,152 +1,233 @@
 # 🤠 Silver Creeks
 
-> **Silver Creeks** is an AI-powered NPC memory simulation built for the **Cognee Hackathon 2026**. Instead of treating NPCs as stateless chatbots, every character maintains persistent memories, recalls past interactions, spreads information naturally through a town-wide knowledge graph, and evolves over time using Cognee's hybrid graph-vector memory layer.
+> **Silver Creeks** is an AI-powered NPC memory simulation where every character remembers conversations, forms opinions, spreads rumors, and influences future gameplay using **Cognee's persistent hybrid graph-vector memory layer**.
 
----
-
-# Demo
-
-> *(Add demo GIF here)*
-
----
-
-# Screenshots
-
-*(Add screenshots of Chat, Brain Inspector, Knowledge Graph and Town Memory)*
+<p align="center">
+  <img src="ss/demo.gif" width="900"/>
+</p>
 
 ---
 
 # Inspiration
 
-Traditional AI NPCs forget everything once a conversation ends.
+Modern open-world games have incredibly immersive environments, but NPCs are often surprisingly forgetful.
 
-I wanted to explore what happens if every NPC could permanently remember conversations, share information with others, and develop opinions based on previous interactions.
+Games like **Genshin Impact**, **GTA V**, **Red Dead Redemption 2**, and **Skyrim** inspired this project. Despite their rich worlds, interacting with the same NPC multiple times usually leads to identical conversations, regardless of what the player has done. NPCs rarely remember previous encounters, react to rumors, or let player actions have lasting consequences.
 
-Rather than scripting every interaction, I used Cognee to create persistent memories that influence future conversations.
+I wanted to explore a different idea:
+
+> **What if NPCs actually remembered everything that mattered?**
+
+Instead of scripted dialogue, NPCs would build memories over time, spread information naturally, and let those memories influence future gameplay.
 
 ---
 
-# What it does
+# Demo
 
-Silver Creeks simulates a living town where every NPC has long-term memory.
+<p align="center">
+  <img src="ss/demo.gif" width="900"/>
+</p>
 
-Players interact with multiple residents, perform actions, spread rumors, build trust, or damage relationships. Those interactions are remembered, propagated, and later recalled by other NPCs—even if they were never directly involved.
+---
 
-The application combines:
+# Screenshots
 
-- Persistent NPC memory
-- Shared town memory
-- Knowledge graph visualization
-- Dynamic trust & reputation
-- Gossip propagation
-- Memory inspection
-- Memory consolidation
-- Interactive conversations
+<p align="center">
+  <img src="ss/chat.png" width="48%"/>
+  <img src="ss/graph.png" width="48%"/>
+</p>
+
+<p align="center">
+  <img src="ss/brain.png" width="48%"/>
+  <img src="ss/town-memory.png" width="48%"/>
+</p>
+
+---
+
+# Features
+
+- 🧠 Persistent NPC memory
+- 💬 Dynamic AI conversations
+- 📢 Rumor & gossip propagation
+- 🤝 Dynamic trust and reputation
+- 🕸️ Interactive knowledge graph
+- 🧩 NPC Brain Inspector
+- 🏘️ Shared Town Memory
+- 🔄 Memory consolidation
+- 🧹 Memory reset (Town Amnesia)
+- ⚡ Real-time FastAPI backend
 
 ---
 
 # Powered by Cognee
 
-Cognee acts as the persistent memory layer for the entire simulation.
+Cognee acts as the **memory engine** behind the entire simulation.
 
-Instead of manually storing conversation history, every interaction flows through Cognee's memory lifecycle.
+Every interaction performed by the player becomes structured memory instead of disappearing once the conversation ends.
 
-### remember()
+The application makes use of Cognee's complete memory lifecycle.
 
-Stores conversations, rumors, attacks, thefts, investigations, purchases and other significant events as structured memories.
+## 📝 remember()
 
-### recall()
+Stores important interactions such as:
 
-Retrieves the most relevant memories before every NPC response, allowing conversations to continue naturally across sessions.
+- Conversations
+- Rumors
+- Theft
+- Attacks
+- Purchases
+- Medical treatment
+- Investigations
 
-### improve()
+Each NPC maintains its own private memory dataset.
 
-Consolidates important memories into a shared town dataset, strengthening relationships and enriching future retrieval.
+---
 
-### forget()
+## 🔍 recall()
 
-Allows the entire town memory to be reset while preserving the application itself.
+Before generating every response, NPCs retrieve relevant memories from:
+
+- Their personal memory
+- Shared town memory
+
+This allows conversations to continue naturally across sessions instead of starting from scratch.
+
+---
+
+## 🧠 improve()
+
+Important events are consolidated into a shared town dataset.
+
+This allows knowledge to spread naturally throughout the world without hardcoded logic.
+
+---
+
+## 🧹 forget()
+
+The Town Amnesia feature demonstrates Cognee's `forget()` API by clearing persistent memories while leaving the application intact.
+
+---
+
+# Memory Flow
+
+<p align="center">
+  <img src="ss/memory-flow.png" width="850"/>
+</p>
+
+```
+Player Action
+        │
+        ▼
+FastAPI Backend
+        │
+        ▼
+Cognee remember()
+        │
+        ▼
+NPC Dataset
+        │
+        ▼
+Shared Town Memory
+        │
+        ▼
+Cognee recall()
+        │
+        ▼
+NPC Response
+```
 
 ---
 
 # Knowledge Graph
 
-Every memory stored through Cognee contributes to a dynamic knowledge graph.
+Every memory contributes to an evolving knowledge graph.
 
 The graph visualizes:
 
 - NPC relationships
 - Player interactions
 - Shared memories
+- Locations
 - Rumors
 - Events
-- Locations
 
-Rather than exposing raw graph nodes generated during ingestion, the backend contracts generic event nodes into meaningful relationships, making the graph readable and useful for users.
+Instead of exposing raw graph nodes generated by ingestion, the backend contracts intermediate event nodes into meaningful storytelling relationships.
+
+Example:
+
+```
+Lalo
+    attacked
+        ▼
+Wade Granger
+```
+
+rather than
+
+```
+Conversation
+     ▼
+Event
+     ▼
+Relationship
+     ▼
+Wade
+```
+
+<p align="center">
+  <img src="ss/knowledge_graph.png" width="900"/>
+</p>
 
 ---
 
-# How it works
+# NPC Brain Inspector
 
-```
-Player Action
-      │
-      ▼
-FastAPI Backend
-      │
-      ▼
-Cognee remember()
-      │
-      ▼
-NPC Dataset
-      │
-      ▼
-Town Memory
-      │
-      ▼
-Knowledge Graph
-      │
-      ▼
-Future NPC Responses
-```
+Every NPC exposes the exact memory context used while generating responses.
 
-Every NPC first retrieves memories from Cognee before generating a response, allowing previous conversations to influence future behavior.
+The Brain Inspector displays:
+
+- Retrieved memories
+- Current trust
+- Current attitude
+- Relationship summaries
+- Shared town memories
+- Knowledge source
+
+This makes the retrieval process transparent instead of acting as a black box.
+
+<p align="center">
+  <img src="ss/brain.png" width="900"/>
+</p>
 
 ---
 
-# Architecture
+# System Architecture
+
+<p align="center">
+  <img src="ss/architecture.png" width="900"/>
+</p>
 
 ```
-Frontend (Next.js)
-
-        │
-
-        ▼
-
-FastAPI Backend
-
- ├── AI Service
- ├── Memory Service
- ├── Graph Service
- ├── Reputation Service
- └── Propagation Service
-
-        │
-
-        ▼
-
-      Cognee
-
-remember()
-recall()
-improve()
-forget()
-
-        │
-
-        ▼
-
-Hybrid Graph + Vector Memory
+                Next.js Frontend
+                       │
+                       ▼
+                FastAPI Backend
+        ┌──────────────┼──────────────┐
+        │              │              │
+ AI Service   Memory Service   Graph Service
+        │              │              │
+        └──────────────┼──────────────┘
+                       │
+                       ▼
+                    Cognee
+      remember() • recall()
+      improve() • forget()
+                       │
+                       ▼
+       Hybrid Graph + Vector Memory
+                       │
+                       ▼
+         NPC Responses & Knowledge Graph
 ```
 
 ---
@@ -168,7 +249,7 @@ Hybrid Graph + Vector Memory
 - LiteLLM
 - Instructor
 
-### Memory
+### Memory Layer
 
 - Cognee
 - FastEmbed
@@ -180,16 +261,27 @@ Hybrid Graph + Vector Memory
 
 ```
 backend/
-    models/
-    routers/
-    services/
-    prompts/
-    utils/
-    state/
+│
+├── models/
+├── prompts/
+├── routers/
+├── services/
+├── utils/
+└── state/
 
 frontend/
-    app/
-    components/
+│
+├── app/
+├── components/
+└── modules/
+
+ss/
+├── demo.gif
+├── architecture.png
+├── memory-flow.png
+├── graph.png
+├── brain.png
+└── town-memory.png
 ```
 
 ---
@@ -199,14 +291,20 @@ frontend/
 ## Backend
 
 ```bash
+cd backend
+
 pip install -r requirements.txt
+
 python main.py
 ```
 
 ## Frontend
 
 ```bash
+cd frontend
+
 npm install
+
 npm run dev
 ```
 
@@ -235,17 +333,17 @@ CORS_ALLOWED_ORIGINS="http://localhost:3000"
 
 # Challenges
 
-Building persistent AI behavior turned out to be much more challenging than generating responses.
+Designing believable AI memory turned out to be much harder than generating responses.
 
-Some of the key problems I worked through included:
+Some of the major challenges included:
 
 - Preventing duplicate memories
-- Cleaning noisy graph structures
-- Making knowledge graphs readable
-- Managing shared versus private memory
-- Propagating rumors naturally
-- Maintaining relationship consistency across multiple NPCs
-- Keeping retrieval relevant as memories accumulated
+- Separating private and shared memory
+- Building meaningful knowledge graphs
+- Keeping retrieval relevant as memories grew
+- Propagating rumors naturally between NPCs
+- Maintaining consistent trust across multiple characters
+- Contracting noisy graph structures into readable relationships
 
 ---
 
@@ -253,39 +351,45 @@ Some of the key problems I worked through included:
 
 This project was developed **solo** during the hackathon.
 
-Because of time constraints, several planned features are either simplified or incomplete, including:
+Due to the limited time available, I wasn't able to implement every feature I had planned. Some mechanics are simplified, and several ideas remain works in progress, including:
 
-- More sophisticated rumor confidence
-- Daily NPC routines
-- Memory confidence decay
+- Autonomous NPC-to-NPC conversations
+- Memory confidence and decay
+- Daily schedules and routines
 - Dynamic economy
-- Richer graph analytics
-- Additional NPC actions and interactions
+- Larger populations of NPCs
+- Advanced graph analytics
+- Smarter rumor verification
 
-Despite these limitations, the project demonstrates how Cognee can serve as a persistent memory layer for AI-driven simulations and interactive worlds.
+Despite these limitations, the project demonstrates how persistent memory can fundamentally change NPC interactions and create a world where every action has lasting consequences.
 
 ---
 
 # Future Work
 
+- NPC autonomous conversations
 - Memory confidence scoring
-- Temporal reasoning
-- Autonomous NPC-to-NPC conversations
-- Dynamic schedules
-- Multi-town simulations
-- Quest generation
-- Voice interaction
+- Dynamic economy
+- Procedural quests
+- Multiple connected towns
+- Voice conversations
 - Multiplayer support
+
+---
+
+# Built With
+
+- Cognee
+- FastAPI
+- Next.js
+- React
+- TypeScript
+- D3.js
+- LiteLLM
+- FastEmbed
 
 ---
 
 # Acknowledgements
 
-Built for the **Cognee Hackathon 2026** using:
-
-- Cognee
-- FastAPI
-- Next.js
-- D3.js
-- LiteLLM
-- FastEmbed
+Built for the **Cognee Hackathon 2026** with the goal of exploring how persistent memory can make AI-driven game worlds more immersive, believable, and reactive.
