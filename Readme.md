@@ -450,7 +450,6 @@ Even so, the current prototype demonstrates how Cognee can fundamentally change 
 - D3.js
 
 ---
-**Development Note:** This project was developed with assistance from **Antigravity IDE**, **ChatGPT**, and **Google Gemini 2.5** for brainstorming, code generation, debugging, refactoring, and error resolution. All architectural decisions, feature design, integration, and final implementation were directed, reviewed, and validated by me.
 
 # Hackathon Experience
 
@@ -469,3 +468,5 @@ This project is a prototype, but it demonstrates how persistent memory can make 
 Built for the **Cognee Hackathon 2026**.
 
 The goal of this project is to explore how persistent memory can transform game NPCs from scripted dialogue machines into believable characters whose memories, relationships, and shared experiences genuinely shape the world around them.
+
+**Development Note:** This project was developed with assistance from **Antigravity IDE**, **ChatGPT**, and **Google Gemini 2.5** for brainstorming, code generation, debugging, refactoring, and error resolution. All architectural decisions, feature design, integration, and final implementation were directed, reviewed, and validated by me.
