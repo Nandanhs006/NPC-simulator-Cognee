@@ -135,6 +135,12 @@ The following screenshots demonstrate the UI and developer views. Files are in t
 - **State / Logs View**
 	![State View](ss/Screenshot%202026-07-06%20001646.png)
 
+- **New: Consolidate / Memory Improve**
+	![Consolidate View](ss/Screenshot%202026-07-06%20002558.png)
+
+- **New: Town Amnesia / Delete Memory**
+	![Town Amnesia](ss/Screenshot%202026-07-06%20002608.png)
+
 ## Project Layout
 - `backend/` — server entry, services, models, prompts and routers.
 - `frontend/` — Next.js app with chat UI and utility modules.
@@ -148,3 +154,20 @@ The following screenshots demonstrate the UI and developer views. Files are in t
 ## Notes & Next Steps
 - If you plan to run the system locally, seed files are under `backend/seeded.txt` and `state/state.json`.
 - Consider adding CI checks and a `docker-compose` dev setup for easier onboarding.
+
+## Memory features
+
+- `consolidate`: a feature to improve and consolidate NPC memories into compact, useful summaries that the system can reason over more effectively. Use this to merge repetitive or overlapping memory entries and boost recall quality.
+- `town amnesia` (delete memory): an intentional memory-pruning operation to remove obsolete or harmful memories from the world state. Useful for resetting local NPC knowledge or simulating forgetting at scale.
+
+Both features are designed to be used from the `memory_service` in `backend/services/` or triggered by administrative endpoints in `backend/routers/`.
+
+## Cognee (core integration)
+
+This project uses `cognee` throughout the stack — it is the primary engine for data handling, memory management, and orchestration.
+
+- `Cognee` powers the local vector stores, summaries, and many background maintenance tasks.
+- It is integrated into the `backend/services/` layer and used by `ai_service.py`, `memory_service.py`, and graph-related modules to provide robust, scalable tooling for simulation and reasoning.
+- The system leans on `cognee` for efficient memory consolidation, retrieval, and cleanup operations — making it the single most important dependency in the stack.
+
+Highlight: `cognee` is used everywhere and provides the backbone for memory, retrieval, and state orchestration in this project.
