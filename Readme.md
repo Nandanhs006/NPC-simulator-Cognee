@@ -148,10 +148,3 @@ The following screenshots demonstrate the UI and developer views. Files are in t
 ## Notes & Next Steps
 - If you plan to run the system locally, seed files are under `backend/seeded.txt` and `state/state.json`.
 - Consider adding CI checks and a `docker-compose` dev setup for easier onboarding.
-
----
-
-If you'd like, I can also:
-- add a small `docker-compose.yml` for local development,
-- generate PNG exports of the SVG diagrams,
-- or update the `backend/main.py` usage documentation.
